@@ -1,23 +1,184 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NaPLACE</title>
+
   <style>
-    html, body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    header { padding:16px; border-bottom:1px solid #eee; }
-    main { max-width:960px; margin:0 auto; padding:24px; }
-    .cta { display:inline-block; padding:12px 16px; border:1px solid #111; text-decoration:none; }
-    @media (max-width:600px) { main { padding:16px; } }
+    :root {
+      --brand: #3b82f6;
+      --brand-dark: #1e40af;
+      --bg: #f8fafc;
+      --fg: #0f172a;
+      --muted: #475569;
+      --card-bg: #ffffff;
+      --radius: 16px;
+      --shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--brand); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+    section { margin: 80px 0; }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--brand);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+    .card h3 { color: var(--brand-dark); margin-bottom: 10px; }
+    .card p { color: var(--muted); }
+
+    footer {
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --fg: #f1f5f9;
+        --card-bg: #1e293b;
+        --muted: #94a3b8;
+      }
+      header, footer { background: #1e293b; }
+    }
   </style>
 </head>
+
 <body>
-  <header><strong>NaPLACE</strong></header>
+  <header>
+    <a class="brand" href="#">NaPLACE</a>
+    <nav>
+      <a href="#about">소개</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#contact">연락</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>안녕하세요</h1>
-    <p>동아리/프로젝트 소개 문구를 여기에.</p>
-    <a class="cta" href="#contact">Contact</a>
+    <section class="hero">
+      <h1>NaPLACE에 오신 것을 환영합니다</h1>
+      <p>창의적 사고와 협업을 통해 문제를 해결하는 수학·정보 중심 동아리입니다.</p>
+      <a class="btn" href="#projects">활동 살펴보기</a>
+    </section>
+
+    <section id="projects">
+      <h2 style="text-align:center;">주요 활동</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>AI 자동화</h3>
+          <p>n8n을 이용해 반복 작업을 자동화하고, 실제 워크플로우를 설계합니다.</p>
+        </div>
+        <div class="card">
+          <h3>프로그래밍 연구</h3>
+          <p>Python과 C++을 이용해 수학적 알고리즘을 구현하고 실험합니다.</p>
+        </div>
+        <div class="card">
+          <h3>웹 서비스 개발</h3>
+          <p>Railway와 GitHub Pages를 활용해 프로젝트를 실제로 배포합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="text-align:center;">
+      <h2>우리가 추구하는 가치</h2>
+      <p style="max-width:700px; margin: 20px auto; color:var(--muted);">
+        NaPLACE는 수학적 사고력, 창의적 문제 해결 능력, 그리고 협업 역량을 바탕으로  
+        세상을 조금 더 나은 방향으로 변화시키는 것을 목표로 합니다.
+      </p>
+    </section>
+
+    <section id="contact" style="text-align:center;">
+      <h2>연락하기</h2>
+      <p>문의 사항이 있거나 협업을 원하신다면 아래로 연락해주세요.</p>
+      <a class="btn" href="mailto:naplace@school.org">이메일 보내기</a>
+    </section>
   </main>
+
+  <footer>
+    © 2025 NaPLACE — All Rights Reserved
+  </footer>
 </body>
 </html>
