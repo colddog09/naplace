@@ -3,59 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NaPLACE</title>
+  <title>Na'PLACE 동아리</title>
+  <meta name="description" content="경기북과학고 Na'PLACE — 수학·정보 기반 프로젝트 동아리">
   <style>
-    :root {
+    :root{
       --brand:#3b82f6; --brand-dark:#1e40af;
-      --bg:#f8fafc; --fg:#0f172a; --muted:#475569; --card-bg:#ffffff;
-      --radius:16px; --shadow:0 6px 20px rgba(0,0,0,0.08);
+      --bg:#f8fafc; --fg:#0f172a; --muted:#475569; --card:#ffffff;
+      --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:10}
-    .brand{font-size:22px;font-weight:700;color:var(--brand-dark);text-decoration:none}
-    nav a{margin-left:24px;text-decoration:none;color:var(--muted);font-weight:500}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e2e8f0}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand-dark)}
+    .brand img{width:28px;height:28px;object-fit:contain}
+    nav a{margin-left:20px;color:var(--muted);font-weight:600}
     nav a:hover{color:var(--brand)}
     main{max-width:1100px;margin:0 auto;padding:40px 20px}
-    section{margin:80px 0}
-    .hero{text-align:center;padding:120px 20px 80px}
-    .hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--brand-dark);margin-bottom:20px}
-    .hero p{color:var(--muted);font-size:18px;margin-bottom:32px}
-    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;transition:background .25s,transform .2s;border:1px solid transparent}
+    section{margin:72px 0}
+    .hero{text-align:center;padding:90px 20px 60px}
+    .hero-title{display:inline-flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;color:var(--brand-dark);margin:0}
+    .logo-large{width:44px;height:44px;object-fit:contain}
+    .hero p{color:var(--muted);font-size:18px;margin:12px 0 28px}
+    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid transparent;transition:background .25s,transform .2s}
     .btn:hover{background:var(--brand-dark);transform:translateY(-2px)}
-    .btn.ghost{background:#fff;color:var(--fg);border-color:#e5e7eb}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card-bg);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e5e7eb}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e5e7eb}
     .card h3{margin:0 0 8px;color:var(--brand-dark)}
     .card p{margin:0 0 12px;color:var(--muted);font-size:14px;word-break:break-all}
-    footer{background:#fff;border-top:1px solid #e2e8f0;text-align:center;padding:30px;color:#64748b;font-size:14px}
+    ul.clean{margin:0;padding-left:18px}
+    ul.clean li{margin:.35rem 0}
+    footer{background:#fff;border-top:1px solid #e2e8f0;text-align:center;padding:28px;color:#64748b;font-size:14px}
     @media (prefers-color-scheme: dark){
-      :root{--bg:#0f172a;--fg:#f1f5f9;--card-bg:#1e293b;--muted:#94a3b8}
+      :root{--bg:#0f172a;--fg:#f1f5f9;--card:#1e293b;--muted:#94a3b8}
       header,footer{background:#1e293b}
-      .btn.ghost{background:transparent;border-color:#334155;color:#e2e8f0}
       .card{border-color:#334155}
     }
   </style>
 </head>
-
 <body>
   <header>
-    <a class="brand" href="#">NaPLACE</a>
-    <nav>
-      <a href="#servers">n8n</a>
-    </nav>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="assets/naplace-logo.png" alt="Na'PLACE 로고">
+        Na'PLACE
+      </a>
+      <nav>
+        <a href="#intro">소개</a>
+        <a href="#servers">n8n</a>
+        <a href="#contact">연락</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <!-- 히어로 -->
     <section class="hero">
-      <h1>NaPLACE에 오신 것을 환영합니다</h1>
-      <p>수학·정보 중심 동아리. 아래에서 n8n 서버를 선택해 바로 접속하세요.</p>
-      <a class="btn" href="#servers">n8n 서버 보기</a>
+      <div class="hero-title">
+        <h1>Na'PLACE 동아리</h1>
+        <img class="logo-large" src="assets/naplace-logo.png" alt="Na'PLACE 로고">
+      </div>
+      <p>수학·정보로 문제를 해결하는 프로젝트 기반 동아리입니다.</p>
+      <a class="btn" href="#intro">동아리 소개 보기</a>
     </section>
 
-    <!-- n8n 서버 (초간단) -->
+    <!-- 동아리 소개 목록 -->
+    <section id="intro">
+      <h2>동아리 소개</h2>
+      <ul class="clean">
+        <li><strong>활동 분야</strong> — 알고리즘, 자동화(n8n), 데이터 처리, 물리/수학 시뮬레이션, 웹서비스 제작</li>
+        <li><strong>운영 방식</strong> — 짧은 세미나 → 실습 → 팀 프로젝트 → 발표/문서화</li>
+        <li><strong>도구</strong> — GitHub, n8n, Python/C++, HTML/CSS/JS, Railway·Vercel·Pages</li>
+        <li><strong>정기 일정</strong> — 주 1~2회 정규 모임 + 비정기 스프린트</li>
+        <li><strong>환영 대상</strong> — “배우고 만들고 공유”에 관심 있는 모든 부원(학년 무관)</li>
+      </ul>
+    </section>
+
+    <!-- n8n 서버 4개 (단순 버튼) -->
     <section id="servers">
-      <h2 style="text-align:center;">나플 n8n 서버</h2>
+      <h2>n8n 서버 바로가기</h2>
       <div class="cards">
         <article class="card">
           <h3>server1</h3>
@@ -79,10 +108,16 @@
         </article>
       </div>
     </section>
+
+    <!-- 연락 -->
+    <section id="contact">
+      <h2>연락</h2>
+      <p style="color:var(--muted)">문의/협업: <a href="mailto:naplace@school.org">naplace@school.org</a></p>
+    </section>
   </main>
 
   <footer>
-    © <span id="year"></span> NaPLACE — All Rights Reserved
+    © <span id="year"></span> Na'PLACE — All Rights Reserved
   </footer>
 
   <script>
