@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Na'PLACE 동아리</title>
-  <meta name="description" content="경기북과학고 Na'PLACE — 수학·정보 기반 프로젝트 동아리">
+  <title>Na'PLACE</title>
+  <meta name="description" content="경기북과학고 Na'PLACE — 수학·정보 기반 동아리">
   <style>
     :root{
       --brand:#3b82f6; --brand-dark:#1e40af;
@@ -42,17 +42,32 @@
       header,footer{background:#1e293b}
       .card{border-color:#334155}
     }
+    .hidden{display:none!important}
+    /* Poster embed */
+    .poster{ margin-top:20px; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fff; box-shadow:var(--shadow); }
+    .poster object{ width:100%; height:70vh; display:block; }
+    .poster .fallback{ padding:12px 14px; color:var(--muted); font-size:14px; }
+    @media (max-width:640px){ .poster object{ height:60vh; } }
+    /* n8n lead block */
+    .n8n-lead{ text-align:center; margin:10px 0 18px; }
+    .n8n-lead img{ width:auto; height:160px; object-fit:contain; display:block; margin:0 auto 8px; }
+    /* Section fade-up animation */
+    .fade-in{ animation: fadeUp .38s ease-out both; }
+    @keyframes fadeUp{
+      from{ opacity:0; transform: translateY(12px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#">
+      <a class="brand" href="#hero">
         <img src="assets/naplace-logo.png" alt="Na'PLACE 로고">
         Na'PLACE
       </a>
       <nav>
-        <a href="#intro">소개</a>
+        <a href="#club">동아리 소개</a>
         <a href="#servers">n8n</a>
         <a href="#contact">연락</a>
       </nav>
@@ -61,30 +76,59 @@
 
   <main>
     <!-- 히어로 -->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero-title">
-        <h1>Na'PLACE 동아리</h1>
-        <img class="logo-large" src="assets/naplace-logo.png" alt="Na'PLACE 로고">
+        <h1>Na'PLACE</h1>
       </div>
-      <p>수학·정보로 문제를 해결하는 프로젝트 기반 동아리입니다.</p>
-      <a class="btn" href="#intro">동아리 소개 보기</a>
+      <p>수학·정보기반으로 여러 프로젝트를 진행하는 동아리입니다.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+        <a class="btn" href="#club">동아리 설명 보기</a>
+        <a class="btn" href="#servers">n8n 서버 보기</a>
+        <a class="btn" href="#contact">연락하기</a>
+      </div>
     </section>
 
-    <!-- 동아리 소개 목록 -->
-    <section id="intro">
-      <h2>동아리 소개</h2>
-      <ul class="clean">
-        <li><strong>활동 분야</strong> — 알고리즘, 자동화(n8n), 데이터 처리, 물리/수학 시뮬레이션, 웹서비스 제작</li>
-        <li><strong>운영 방식</strong> — 짧은 세미나 → 실습 → 팀 프로젝트 → 발표/문서화</li>
-        <li><strong>도구</strong> — GitHub, n8n, Python/C++, HTML/CSS/JS, Railway·Vercel·Pages</li>
-        <li><strong>정기 일정</strong> — 주 1~2회 정규 모임 + 비정기 스프린트</li>
-        <li><strong>환영 대상</strong> — “배우고 만들고 공유”에 관심 있는 모든 부원(학년 무관)</li>
-      </ul>
+    <!-- 동아리 설명 (서술형) -->
+    <section id="club">
+      <h2>동아리 설명</h2>
+      <h3 style="font-size:1.6rem;color:var(--brand-dark);margin-top:10px;">수학을 기반으로 정보과학 등을 융합적으로 탐구해요.</h3>
+      <div class="cards" style="margin-top:16px">
+        <article class="card">
+          <h3>21기 구성원</h3>
+          <ul class="clean">
+            <li><strong>담당교사:</strong> 홍창욱</li>
+            <li><strong>기장:</strong> 김주한</li>
+            <li><strong>부기장:</strong> 정선재</li>
+            <li><strong>부원:</strong> 백종원, 이윤형, 이현준, 이준서</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cards" style="margin-top:16px">
+        <article class="card">
+          <h3>20기 구성원</h3>
+          <ul class="clean">
+            <li><strong>담당교사:</strong> 옥민석</li>
+            <li><strong>기장:</strong> 최요한</li>
+            <li><strong>부기장:</strong> 김지후</li>
+            <li><strong>부원:</strong> 김민준, 우지민, 박기륜</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cards" style="margin-top:16px">
+        <article class="card">
+          <h3>2025년 활동</h3>
+          <p style="font-size:1.2rem;color:var(--muted);margin-top:10px;">[공사중]</p>
+        </article>
+      </div>
     </section>
 
     <!-- n8n 서버 4개 (단순 버튼) -->
     <section id="servers">
       <h2>n8n 서버 바로가기</h2>
+      <div class="n8n-lead">
+        <img src="assets/n8n.png" alt="n8n 로고">
+        <p class="muted">나플라스 소유 오픈소스 워크플로 자동화 도구 n8n서버입니다. 아래 버튼을 눌러 각 서버로 이동할 수 있습니다.</p>
+      </div>
       <div class="cards">
         <article class="card">
           <h3>server1</h3>
@@ -112,7 +156,10 @@
     <!-- 연락 -->
     <section id="contact">
       <h2>연락</h2>
-      <p style="color:var(--muted)">문의/협업: <a href="mailto:naplace@school.org">naplace@school.org</a></p>
+      <ul class="clean">
+        <li><strong>이메일:</strong> <a href="mailto:naplace1234@gmail.com">naplace1234@gmail.com</a></li>
+        <li><strong>인스타그램:</strong> <a href="https://instagram.com/na.place__official" target="_blank" rel="noopener">@na.place__official</a></li>
+      </ul>
     </section>
   </main>
 
@@ -121,7 +168,65 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Single-section view controller
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = Array.from(document.querySelectorAll('main > section'));
+
+      function showOnly(id){
+        sections.forEach(sec => {
+          if(id === 'all'){
+            sec.classList.remove('hidden');
+          }else{
+            (sec.id === id) ? sec.classList.remove('hidden') : sec.classList.add('hidden');
+          }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Fade-up animation on the newly shown section
+        if (id && id !== 'all') {
+          const shown = document.getElementById(id);
+          if (shown) {
+            shown.classList.remove('fade-in'); // reset if previously applied
+            void shown.offsetWidth;            // reflow to restart animation
+            shown.classList.add('fade-in');
+            shown.addEventListener('animationend', () => shown.classList.remove('fade-in'), { once: true });
+          }
+        }
+        if (id && id !== 'all') history.replaceState(null, '', '#' + id);
+      }
+
+      // Initial: if hash exists use it, otherwise show hero only
+      const initialId = (location.hash || '').replace('#','') || 'hero';
+      if (document.getElementById(initialId)) showOnly(initialId); else showOnly('hero');
+
+      // Intercept internal hash links (e.g., #intro, #club, #servers, #contact)
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href]');
+        if (!a) return;
+        const href = a.getAttribute('href');
+
+        // Allow external links (http/https), mailto, tel as-is
+        if (/^(https?:|mailto:|tel:)/i.test(href)) return;
+
+        if (href.startsWith('#')) {
+          const id = href.slice(1) || 'intro';
+          const target = document.getElementById(id);
+          if (target) {
+            e.preventDefault();
+            showOnly(id);
+          }
+        }
+      });
+
+      // Reflect browser back/forward
+      window.addEventListener('hashchange', () => {
+        const id = (location.hash || '').replace('#','') || 'hero';
+        if (document.getElementById(id)) showOnly(id);
+      });
+
+      // Footer year
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
