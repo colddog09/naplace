@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Na'PLACE - 동아리 운영 계획</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="config.js"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+    <nav
+        class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img alt="Na'PLACE 로고" class="h-10 w-auto" src="assets/images/logo.png" />
+                    <span class="font-bold text-xl tracking-tight text-secondary dark:text-white">Na'PLACE</span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="index.html#about">동아리 설명</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="activities.html">작년 활동</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="plan.html">올해 계획</a>
+                    <a class="text-primary font-bold hover:text-orange-600 transition-colors flex items-center gap-1"
+                        href="recruit.html">
+                        22기 선발 공고
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    </a>
+                        <span class="material-icons-outlined text-gray-600 dark:text-gray-300">brightness_4</span>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                        <span class="material-icons-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="relative bg-secondary dark:bg-secondary-dark overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary-dark to-secondary opacity-90"></div>
+            <div
+                class="absolute inset-0 opacity-10 bg-[radial-gradient(#f95d12_1px,transparent_1px)] [background-size:20px_20px]">
+            </div>
+        </div>
+        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <span class="text-primary font-bold tracking-wider uppercase mb-2">Na'PLACE</span>
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+             <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300">올해 계획</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-300">
+                Na'PLACE가 2026년에 22기들과 할 활동들을 소개합니다.
+            </p>
+        </div>
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-[50px]" data-name="Layer 1" preserveAspectRatio="none"
+                viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-background-light dark:fill-background-dark"
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+        <section class="relative">
+            <div class="mb-12 text-center md:text-left">
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-secondary dark:text-white flex items-center justify-center md:justify-start gap-3">
+                    <span class="bg-primary w-2 h-10 rounded-full inline-block"></span>
+                    2026 운영 계획
+                </h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 text-lg">활동 내용은 미세하게 조정될 수 있습니다.</p>
+            </div>
+            <div class="relative py-8">
+                <div
+                    class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 transform -translate-x-1/2">
+                </div>
+                <div class="space-y-12">
+                    <div class="relative md:flex items-center justify-between group">
+                        <div
+                            class="md:w-[45%] mb-8 md:mb-0 bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-lg">
+                            <div class="flex items-center justify-between mb-4">
+                                
+                                <span class="material-icons-outlined text-gray-400">code</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">딥위수 & Python</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 딥위수(딥러닝을 위한
+                                수학)를 통한 선형대수학 및 미적분</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Python 기초 세미나</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg z-10 border-4 border-background-light dark:border-background-dark group-hover:bg-primary transition-colors">
+                                1
+                            </div>
+                        </div>
+                        <div class="md:w-[45%]"></div>
+                    </div>
+                    <div class="relative md:flex items-center justify-between group">
+                        <div class="md:w-[45%]"></div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg z-10 border-4 border-background-light dark:border-background-dark group-hover:bg-primary transition-colors">
+                                2
+                            </div>
+                        </div>
+                        <div
+                            class="md:w-[45%] bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-lg">
+                            <div class="flex items-center justify-between mb-4">
+                       
+                                <span class="material-icons-outlined text-gray-400">rocket_launch</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">AI와 딥러닝</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 딥러닝 세미나 및 실습</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 유전 알고리즘 세미나</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 나만의 AI 모델 제작하기 프로젝트 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative md:flex items-center justify-between group">
+                        <div
+                            class="md:w-[45%] mb-8 md:mb-0 bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-lg">
+                            <div class="flex items-center justify-between mb-4">
+                                
+                                <span class="material-icons-outlined text-gray-400">lightbulb</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">n8n</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 자동화 워크플로우 툴 n8n 세미나 및 실습</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> n8n을 활용한 해커톤</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg z-10 border-4 border-background-light dark:border-background-dark group-hover:bg-primary transition-colors">
+                                3
+                            </div>
+                        </div>
+                        <div class="md:w-[45%]"></div>
+                    </div>
+                     <div class="relative md:flex items-center justify-between group">
+                        <div class="md:w-[45%]"></div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg z-10 border-4 border-background-light dark:border-background-dark group-hover:bg-primary transition-colors">
+                                4
+                            </div>
+                        </div>
+                        <div
+                            class="md:w-[45%] bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-lg">
+                            <div class="flex items-center justify-between mb-4">
+                       
+                                <span class="material-icons-outlined text-gray-400">code</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">정보 보안</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 웹 세미나</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 웹해킹 세미나 및 실습</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative md:flex items-center justify-between group">
+                        <div
+                            class="md:w-[45%] mb-8 md:mb-0 bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all hover:shadow-lg">
+                            <div class="flex items-center justify-between mb-4">
+                                
+                                <span class="material-icons-outlined text-gray-400">lightbulb</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">그 외</h3>
+                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 병렬컴퓨팅</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 과학동아리발표회</li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> 뇌파측정기</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-bold shadow-lg z-10 border-4 border-background-light dark:border-background-dark group-hover:bg-primary transition-colors">
+                                5
+                            </div>
+                        </div>
+                        <div class="md:w-[45%]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+    </main>
+    <footer class="bg-secondary text-slate-300 py-12 border-t border-slate-700" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img alt="Na'PLACE Footer Logo" class="h-8 w-auto opacity-90" src="assets/images/logo.png" />
+                        <span class="font-bold text-xl text-white">Na'<span class="text-primary">PLACE</span></span>
+                    </div>
+                    <p class="text-sm max-w-xs text-slate-400">
+                        응용수학 동아리 Na'PLACE<br />
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                </span>
+                                naplace1234@gmail.com
+                            </li>
+                            <li class="flex items-center gap-2">
+                                </span>
+                                @na.place_official
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-12 pt-8 text-center md:text-left text-xs text-slate-500">
+                <p>© 2026 Na'PLACE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
