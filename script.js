@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveScrollLink);
 });
 
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+    }
+}
+
 function updateActiveNavLink() {
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('nav a');
@@ -105,3 +112,60 @@ function updateActiveScrollLink() {
         });
     }
 }
+
+// Member Data
+const memberData = {
+    '김주한': {
+        role: '기장',
+        description: '@kjhclider'
+    },
+    '정선재': {
+        role: '부기장',
+        description: '@spxel__'
+    },
+    '이현준': {
+        role: '부원',
+        description: '@2hzxz_.n'
+    },
+    '이준서': {
+        role: '부원',
+        description: '@junn._.seoo'
+    },
+    '이윤형': {
+        role: '부원',
+        description: '@profittype271'
+    },
+    '백종원': {
+        role: '부원',
+        description: '@jjongwon._.1729'
+    }
+};
+
+function openMemberModal(name) {
+    const modal = document.getElementById('member-modal');
+    const title = document.getElementById('modal-name');
+    const role = document.getElementById('modal-role');
+    const description = document.getElementById('modal-description');
+
+    if (memberData[name]) {
+        title.textContent = name;
+        role.textContent = memberData[name].role;
+        description.textContent = memberData[name].description;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+}
+
+function closeMemberModal() {
+    const modal = document.getElementById('member-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('member-modal');
+    if (e.target === modal) {
+        closeMemberModal();
+    }
+});

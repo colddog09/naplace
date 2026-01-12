@@ -41,10 +41,27 @@
                     </button>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
+                    <button class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none"
+                        onclick="toggleMobileMenu()">
                         <span class="material-icons-outlined text-3xl">menu</span>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 absolute w-full left-0 top-16 shadow-lg">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    href="index.html#about">동아리 설명</a>
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    href="activities.html">작년 활동</a>
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    href="plan.html">올해 계획</a>
+                <a class="block px-3 py-2 rounded-md text-base font-bold text-primary hover:bg-primary/10 transition-colors"
+                    href="recruit.html">
+                    22기 선발 공고
+                </a>
             </div>
         </div>
     </nav>
