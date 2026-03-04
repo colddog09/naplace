@@ -222,13 +222,28 @@ const timelineData = {
 };
 
 // 2. 모달 열기 함수
+// [수정됨] 타임라인 모달 열기 (애니메이션 적용)
 function openTimelineModal() {
     const modal = document.getElementById('timeline-modal');
     if (modal) {
         modal.classList.remove('hidden');
-        modal.classList.add('flex'); // 네 HTML 구조상 flex가 필요할 수 있어
-        document.body.style.overflow = 'hidden';
-        switchTimelineTab('1-1'); // 처음 열 때 1학기 상반기 보여줌
+        modal.classList.add('flex'); // Flexbox 활성화
+        document.body.style.overflow = 'hidden'; // 스크롤 방지
+
+        // 내부 컨텐츠 박스 선택 (Tailwind 클래스로 찾기)
+        const contentBox = modal.querySelector('div.max-w-lg');
+
+        if (contentBox) {
+            // 기존 애니메이션 클래스 제거 및 리셋
+            contentBox.classList.remove('animate-modal-flex', 'modal-animate');
+            void contentBox.offsetWidth; // 애니메이션 재시작을 위한 리플로우(Reflow) 강제
+
+            // 새 애니메이션 적용 (Flex 전용)
+            contentBox.classList.add('animate-modal-flex');
+        }
+
+        // 탭 초기화 (기존 로직 유지)
+        switchTimelineTab('1-1');
     }
 }
 
@@ -242,34 +257,47 @@ function closeTimelineModal() {
     }
 }
 
-// 4. 탭 전환 및 내용 표시 함수 (네 HTML의 switchTimelineTab과 매칭)
+// 4. 타임라인 탭 변경 및 인디케이터 이동 함수
 function switchTimelineTab(period) {
-    const content = document.getElementById('timeline-content');
-    
-    // 모든 탭의 스타일 초기화 (기존 강조 제거)
-    const tabs = document.querySelectorAll('[id^="tab-"]');
-    tabs.forEach(tab => {
-        tab.classList.remove('border-primary', 'text-primary');
-        tab.classList.add('border-transparent', 'text-gray-500');
-    });
+    // 1. 선택된 탭의 인덱스 찾기 (0, 1, 2, 3)
+    const tabs = ['1-1', '1-2', '2-1', '2-2'];
+    const index = tabs.indexOf(period);
 
-    // 선택된 탭 강조
-    const activeTab = document.getElementById(`tab-${period}`);
-    if (activeTab) {
-        activeTab.classList.add('border-primary', 'text-primary');
-        activeTab.classList.remove('border-transparent', 'text-gray-500');
+    // 2. 하단 바(인디케이터) 슬라이딩 이동시키는 핵심 코드
+    const indicator = document.getElementById('timeline-indicator');
+    if (indicator) {
+        indicator.style.left = (index * 25) + '%';
     }
 
-    // 내용 렌더링
-    if (content && timelineData[period]) {
-        content.innerHTML = `
-            <div class="relative border-l-2 border-primary/20 ml-4 pl-8 space-y-8">
-                ${timelineData[period].map(item => `
-                    <div class="relative">
-                        <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-surface-dark"></div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-700">
-                            <span class="text-primary font-bold text-sm">${item.date}</span>
-                            <h4 class="text-gray-900 dark:text-white font-semibold mt-1">${item.activity}</h4>
+    // 3. 탭 글자 색상 변경 (선택된 건 진하게, 나머지는 연하게)
+    tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (btn) {
+            if (t === period) {
+                btn.classList.remove('text-gray-500', 'font-medium');
+                btn.classList.add('text-primary', 'font-bold');
+            } else {
+                btn.classList.remove('text-primary', 'font-bold');
+                btn.classList.add('text-gray-500', 'font-medium');
+            }
+        }
+    });
+
+    // 4. 내용 갈아끼우기
+    const contentDiv = document.getElementById('timeline-content');
+    if (contentDiv && timelineData[period]) {
+        // 내용 초기화 및 스크롤 맨 위로 올리기
+        contentDiv.scrollTop = 0;
+
+        // 데이터 매핑
+        contentDiv.innerHTML = `
+            <div class="relative border-l-2 border-primary/20 ml-4 pl-8 space-y-8 py-2">
+                ${timelineData[period].map((item, idx) => `
+                    <div class="relative timeline-item-enter" style="animation-delay: ${idx * 0.1}s">
+                        <div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-surface-dark shadow-sm"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow duration-300">
+                            <span class="text-primary font-bold text-sm block mb-1">${item.date}</span>
+                            <h4 class="text-gray-900 dark:text-white font-semibold text-base">${item.activity}</h4>
                         </div>
                     </div>
                 `).join('')}
@@ -327,28 +355,28 @@ const activityData = [
         content: "딥러닝(Deep Learning)은 다층 인공신경망을 기반으로 한 기계학습 방법론이에요. 특징 설계를 사람이 직접 정의하지 않고, 오차 역전파와 최적화를 통해 복잡한 비선형 함수 근사는 수행함으로써 고차원 문제에서 탁월한 표현 학습 능력을 보이게 합니다.\\n\\n2학기 초에 진행된 딥러닝 세미나에서는 함께 머신러닝, 인공신경망, 퍼셉트론의 한계(XOR 문제)와 이를 극복하는 다층 퍼셉트론(MLP)까지의 이론적 흐름을 학습했습니다.\\n\\n또 Google Colab으로 PyTorch를 활용해 MLP를 직접 구현하는 실습도 진행했습니다."
     },
     {
-            title: "자신만의 인공지능 모델",
-            image: "assets/images/post3.png",
-            content: `
-                딥러닝 세미나에서 뉴럴 네트워크의 작동방식 + Python의 여러 라이브러리로 구현하는 방법을 배웠다면, 원하는 AI를 구현해볼 차례가 아닐까요?
-                <br><br>
-                21기 2명씩 3팀을 이루어 사회 문제를 해결할, 특정 직업에 도움이 되는, 또는 그냥 재미로 (!) AI 모델을 직접 학습하고 완성했습니다!
+        title: "자신만의 인공지능 모델",
+        image: "assets/images/post3.png",
+        content: `
+            딥러닝 세미나에서 뉴럴 네트워크의 작동방식 + Python의 여러 라이브러리로 구현하는 방법을 배웠다면, 원하는 AI를 구현해볼 차례가 아닐까요?
+            <br><br>
+            21기 2명씩 3팀을 이루어 사회 문제를 해결할, 특정 직업에 도움이 되는, 또는 그냥 재미로 (!) AI 모델을 직접 학습하고 완성했습니다!
 
-                <div class="mt-6 mb-6 p-5 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 text-left">
-                    
-                    <p class="text-primary dark:text-orange-400 font-bold text-lg mb-3">
-                        21기가 만든 AI 모델
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 ml-1">
-                        <li>AI Generated Image와 Real Image 분류 모델</li>
-                        <li>축구 장면의 파울 여부를 판단하는 이미지 분류 모델</li>
-                        <li>동물 분류 이미지 모델</li>
-                    </ul>
+            <div class="mt-6 mb-6 p-5 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 text-left">
+                
+                <p class="text-primary dark:text-orange-400 font-bold text-lg mb-3">
+                    21기가 만든 AI 모델
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 ml-1">
+                    <li>AI Generated Image와 Real Image 분류 모델</li>
+                    <li>축구 장면의 파울 여부를 판단하는 이미지 분류 모델</li>
+                    <li>동물 분류 이미지 모델</li>
+                </ul>
 
-                </div>
-                마지막 모델은 친구들 이미지를 업로드해 가장 닮은 동물 찾아내는 용도로 변질됐다는건 안비밀..
-            `
-        },
+            </div>
+            마지막 모델은 친구들 이미지를 업로드해 가장 닮은 동물 찾아내는 용도로 변질됐다는건 안비밀..
+        `
+    },
     {
         title: "n8n 프로젝트",
         image: "assets/images/post4.png",
@@ -356,7 +384,80 @@ const activityData = [
     },
     {
         title: "동아리 학술 발표회",
-        image: "assets/images/activity_presentation.png",
-        content: "이진수 태고, 몬티홀 게임(도박), 수학 등식 리듬 게임과 같이 여러 수학적 이론들을 전산학과 융합 하여 게임을 제작하였습니다."
+        image: "assets/images/post5.png",
+        content: `
+            <p class="mb-4">
+                동아리 학술 발표회는 각 동아리의 프레젠테이션 발표가 이루어지고, 또 각 동아리의 특색이 담긴 부스도 운영되는 북과고의 연간 행사입니다. 
+                25년에는 1학기 기말고사를 치른 직후부터 준비해 여름 방학 전에 진행되었습니다. 
+                (자세한 일정은 위 타임라인에 적혀있답니다!)
+            </p>
+            <p class="mb-4">
+                2025년 동아리 학술 발표회에서 Na’PLACE는, 여러 수학 이론들을 전산학과 융합해 부스를 제작했답니다.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                    이진수 태고
+                </span>
+                <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                    몬티홀 게임
+                </span>
+                <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                    수학 등식 리듬 게임
+                </span>
+                <span class="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                    배낭 문제 (KnapSack Problem) 게임
+                </span>
+            </div>
+        `
     }
 ];
+
+// 1. 활동 상세 모달 열기
+function openActivityModal(index) {
+    if (!activityData || !activityData[index]) {
+        console.error("데이터 없음:", index);
+        return;
+    }
+
+    const modal = document.getElementById('activity-modal');
+    const data = activityData[index];
+
+    const imgEl = document.getElementById('modal-image');
+    const titleEl = document.getElementById('modal-title');
+    const contentEl = document.getElementById('modal-content');
+
+    if (imgEl) imgEl.src = data.image;
+    if (titleEl) titleEl.textContent = data.title;
+    if (contentEl) contentEl.innerHTML = data.content;
+
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+        const backdrop = modal.querySelector('div.absolute.inset-0');
+        const contentBox = modal.querySelector('div.max-w-2xl');
+
+        if (backdrop && contentBox) {
+            backdrop.classList.remove('animate-backdrop');
+            contentBox.classList.remove('animate-modal-absolute');
+
+            void backdrop.offsetWidth;
+
+            backdrop.classList.add('animate-backdrop');
+            contentBox.classList.add('animate-modal-absolute');
+        }
+    }
+}
+
+// 2. 활동 상세 모달 닫기
+function closeActivityModal() {
+    const modal = document.getElementById('activity-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+
+        const imgEl = document.getElementById('modal-image');
+        if (imgEl) imgEl.src = "";
+    }
+}
