@@ -4,110 +4,68 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Na'PLACE - 22기 신입 부원 모집</title>
+    <title>Na'PLACE - 경기북과고 유일 응용</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="config.js"></script>
+    <link href="style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#FF5722", // Vibrant Orange from Logo
-                        secondary: "#0D2E50", // Deep Navy from Logo
-                        "background-light": "#F8FAFC", // Very light cool gray
-                        "background-dark": "#0F172A", // Dark slate
-                        "surface-light": "#FFFFFF",
-                        "surface-dark": "#1E293B",
-                    },
-                    fontFamily: {
-                        display: ["'Noto Sans KR'", "sans-serif"],
-                        body: ["'Noto Sans KR'", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.5rem",
-                        'xl': '1rem',
-                        '2xl': '1.5rem',
-                    },
-                    animation: {
-                        'bounce-slow': 'bounce 3s infinite',
-                    }
-                },
-            },
-        };
-    </script>
-    <style>
-        body {
-            font-family: "Noto Sans KR", sans-serif
-        }
-
-        .hero-pattern {
-            background-color: #0D2E50;
-            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDoWhMq-pEPvCvhw7b4CiwfU8Wvy7bLwkz5Rg1pRewHcHn_2QedtH__wGbMeH30kJhBrf6HxBgxp4WfBY3Pcf7c6GzRD5HtyAqlutx90VSfu-0U9o1x34ND4_x9p5gt5YYCrwht72A2VicOpHk6-sHM9FjAsrGrgTaH6zXhkmgv03iROCejY_jrn0oXO2j2JZ4L4TiEVhv8qgGJxn3ixVKhMmWMSZfxinml0Y_Xa_3Bh7XDIG6NupmsL4ZrDyAv9clt56K_KknX_dlb)
-        }
-
-        .fade-up {
-            animation: fadeUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translatey(20px)
-        }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300">
-    <div
-        class="bg-primary text-white text-center py-2.5 font-bold text-xs md:text-sm tracking-wide fixed top-0 w-full z-[60] shadow-md">
-        <span class="mr-1 text-lg align-middle">📢</span>
-        <span class="align-middle">22기 신입 부원 모집 중! 지원 마감이 얼마 남지 않았습니다 (~03.15)</span>
-        <a class="ml-3 px-3 py-0.5 rounded bg-white text-primary font-bold text-xs hover:bg-slate-100 transition-colors align-middle"
-            href="#recruit">바로 지원하기</a>
-    </div>
+
     <nav
-        class="fixed w-full z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 top-[40px] md:top-[42px]">
+        class="fixed w-full z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 ">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <img alt="Na'PLACE Logo" class="h-10 w-auto"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcFZe3sOVUdyIPfT3H8agB3iUSU6qrYWyBGTsaYweBC9eh3roFLNzRKd9Lpi2nTGmUo0DK_Thqf-nyvEDFE0P27mSSdlrWQf00jOmjOTxTW99M2JfGhSg_B4srKh5nim2imFu7nAQ6iAD7a2F44y0lKg3IAIJkYZffePIAxn7ILHSWNDrCzeLA6c3JikIG07fv3GhiTKCD_xhigXl_3eRO8Cb30AOrux7lfFL-INjISuG87q7v2DR_D6Zu0iUWGJ5dByrF4UStxSS" />
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img alt="Na'PLACE Logo" class="h-10 w-auto" src="assets/images/logo.png" />
                     <span class="font-bold text-2xl tracking-tighter text-secondary dark:text-white">Na'<span
                             class="text-primary">PLACE</span></span>
-                </div>
+                </a>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
                         href="index.html#about">동아리 설명</a>
-                    <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
                         href="activities.html">작년 활동</a>
-                    <a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
-                        href="activities.html#plan">올해 계획</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="plan.html">활동 내용</a>
+
                     <a class="text-primary font-bold hover:text-orange-600 transition-colors flex items-center gap-1"
-                        href="recruit.html">
-                        22기 선발 공고
+                        href="https://learning-playground-portal.vercel.app/#apps">
+                        2026 과동발표회
                         <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                     </a>
-                    <a class="px-5 py-2.5 rounded-full bg-secondary text-white font-semibold hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 dark:shadow-none"
-                        href="recruit.html#contact">연락처</a>
-                    <button
-                        class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400"
-                        onclick="document.documentElement.classList.toggle('dark')">
-                        <span class="material-icons-round dark:hidden">dark_mode</span>
-                        <span class="material-icons-round hidden dark:inline">light_mode</span>
+                    <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        onclick="toggleTheme()">
+                        <span class="material-icons-outlined text-gray-600 dark:text-gray-300">brightness_4</span>
                     </button>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-slate-600 dark:text-slate-300 hover:text-primary focus:outline-none">
+                    <button class="text-slate-600 dark:text-slate-300 hover:text-primary focus:outline-none"
+                        onclick="toggleMobileMenu()">
                         <span class="material-icons-round text-3xl">menu</span>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-700 absolute w-full left-0 top-16 shadow-lg">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    href="index.html#about">동아리 설명</a>
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    href="activities.html">작년 활동</a>
+                <a class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                    href="plan.html">활동 내용</a>
+
+                <a class="block px-3 py-2 rounded-md text-base font-bold text-primary hover:bg-primary/10 transition-colors"
+                    href="https://learning-playground-portal.vercel.app/#apps">
+                    2026 과동발표회
+                </a>
             </div>
         </div>
     </nav>
@@ -117,35 +75,18 @@
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
             <div class="mb-6 fade-up" style="animation-delay: 0.1s;">
-                <img alt="Na'PLACE Hero Logo"
-                    class="w-36 h-36 md:w-52 md:h-52 drop-shadow-2xl mx-auto animate-bounce-slow"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA54IgfkYKhyV-VpFN-bEXVnhfDg--Zb1GMLg2xNrcvRYcExdeDjQBP7AGqJaead_NdPrN4Xm7WzfYgxERqoVx-jEdStJ2ZRd2gpA0LQ2E5iolCUWso5RbvvFEeAjMyggW_QEeEHRUiR7h9tQHlLK9OG3YBBXmD787-e9PiIe_-i5kCUjT-4UQ7UDMY6p1cZ3KQiYbKP-oBdkfajNe_OkjLV-OsgN_hv_rU2WTOQO9dTkzdyoSyptdXAPep65XoJZJhVnsYNJQFwn6y" />
+                <img alt="Na'PLACE Logo" class="h-[10rem] w-auto" src="assets/images/logo.png" />
             </div>
-            <div class="fade-up mb-6" style="animation-delay: 0.15s;">
-                <span
-                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/20 border border-primary text-primary font-bold text-sm md:text-base backdrop-blur-sm animate-pulse shadow-[0_0_20px_rgba(255,87,34,0.3)]">
-                    <span class="material-icons-round text-lg">fiber_new</span>
-                    NOW RECRUITING: 22기 신입 부원 모집
-                </span>
-            </div>
+
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight fade-up"
                 style="animation-delay: 0.2s;">
-                수학을 기반으로<br />정보를 탐구하는 동아리<br />
+                응용수학 동아리<br />
                 <span class="text-primary mt-2 inline-block">Na'PLACE</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 fade-up" style="animation-delay: 0.3s;">
-                기술과 사람을 잇는 IT 정보 공유 동아리, 나플레이스입니다. <br />
-                새로운 변화의 시작, <strong>22기</strong>의 주인공이 되어보세요.
+                수학을 기반으로 정보과학을 탐구하는 동아리, 나플라스입니다.<br />
             </p>
             <div class="flex gap-4 fade-up" style="animation-delay: 0.4s;">
-                <a class="px-8 py-3.5 rounded-xl bg-primary text-white font-bold text-lg hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/30 transform hover:-translate-y-1 ring-2 ring-white/10"
-                    href="#recruit">
-                    22기 지원하기
-                </a>
-                <a class="px-8 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm text-white font-medium text-lg border border-white/20 hover:bg-white/20 transition-all"
-                    href="#about">
-                    더 알아보기
-                </a>
             </div>
         </div>
     </header>
@@ -154,8 +95,9 @@
             <div class="text-center mb-16">
                 <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">About Us</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white">동아리 소개</h3>
-                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Na'PLACE는 수학적 사고를 바탕으로 최신 IT 트렌드를
-                    학습하고 실무 프로젝트를 경험하는 성장형 커뮤니티입니다.</p>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Na'PLACE는 이산수학, 선형대수학과 같은 수학을
+                    바탕으로<br />
+                    정보과학의 응용을 다루는 동아리입니다.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                 <div
@@ -164,9 +106,9 @@
                         class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                         <span class="material-icons-round text-3xl">functions</span>
                     </div>
-                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">수학 &amp; 알고리즘</h4>
+                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">Math & Informatics</h4>
                     <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        기초 수학부터 심화 알고리즘까지, 탄탄한 논리적 기반을 다지며 문제 해결 능력을 키웁니다.
+                        수학적 이론들을 바탕으로 인공지능, 병렬컴퓨팅, 워크플로우, 해킹 등의 정보 과학을 탐구합니다.
                     </p>
                 </div>
                 <div
@@ -175,9 +117,9 @@
                         class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                         <span class="material-icons-round text-3xl">groups</span>
                     </div>
-                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">네트워킹</h4>
+                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">네트워크 형성</h4>
                     <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        현직자 멘토링, 선배와의 대화, 타 대학 연합 행사를 통해 폭넓은 인적 네트워크를 형성합니다.
+                        21기 선배와의 멘토&멘티 활동을 통해 지식을 공유하고 선후배간 네트워크를 형성합니다.
                     </p>
                 </div>
                 <div
@@ -186,57 +128,100 @@
                         class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
                         <span class="material-icons-round text-3xl">rocket_launch</span>
                     </div>
-                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">해커톤 &amp; 프로젝트</h4>
+                    <h4 class="text-xl font-bold text-secondary dark:text-white mb-3">다양한 교외 활동들</h4>
                     <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        아이디어를 실제 서비스로 구현하는 팀 프로젝트와 자체 해커톤을 통해 협업 능력을 기릅니다.
+                        슈퍼컴퓨팅 캠프부터 과학동아리활동발표대회, 고등학교소프트웨어경진대회까지 다양한 교외 활동이 예정되어있습니다.
                     </p>
                 </div>
             </div>
             <div class="border-t border-slate-200 dark:border-slate-800 pt-24">
                 <div class="text-center mb-12">
                     <h3 class="text-2xl md:text-3xl font-bold text-secondary dark:text-white">멤버 소개</h3>
-                    <p class="mt-4 text-slate-600 dark:text-slate-400">Na'PLACE의 성장을 이끄는 22기 주요 운영진을 소개합니다.</p>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Na'PLACE의 21기와 22기를 소개합니다.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center mb-6">
+                    <h4 class="text-xl font-bold text-secondary dark:text-white">21기</h4>
+                    <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">카드를 눌러 자세히 볼 수 있습니다.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 mb-6">
+                    <div onclick="openMemberModal('김주한')"
+                        class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            김주한</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">기장</p>
+                    </div>
+                    <div onclick="openMemberModal('정선재')"
+                        class="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            정선재</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">부기장</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div onclick="openMemberModal('이현준')"
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            이현준</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">부원</p>
+                    </div>
+                    <div onclick="openMemberModal('이준서')"
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            이준서</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">부원</p>
+                    </div>
+                    <div onclick="openMemberModal('이윤형')"
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            이윤형</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">부원</p>
+                    </div>
+                    <div onclick="openMemberModal('백종원')"
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                        <h4
+                            class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                            백종원</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">부원</p>
+                    </div>
+                </div>
+                <div class="text-center mb-6">
+                    <h4 class="text-xl font-bold text-secondary dark:text-white">22기</h4>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div
-                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                        <div
-                            class="w-24 h-24 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 mb-5 overflow-hidden flex items-center justify-center border-4 border-slate-50 dark:border-slate-700">
-                            <span class="material-icons-round text-5xl text-slate-300 dark:text-slate-500">face</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-secondary dark:text-white">김함수</h4>
-                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">President</p>
-                        <p class="text-slate-500 text-sm">"수학과 정보학의 융합을 꿈꾸는 리더"</p>
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">설민기</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
                     </div>
                     <div
-                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                        <div
-                            class="w-24 h-24 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 mb-5 overflow-hidden flex items-center justify-center border-4 border-slate-50 dark:border-slate-700">
-                            <span class="material-icons-round text-5xl text-slate-300 dark:text-slate-500">face_3</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-secondary dark:text-white">이통계</h4>
-                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Vice President</p>
-                        <p class="text-slate-500 text-sm">"데이터 분석 기반의 합리적 운영"</p>
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">유호라</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
                     </div>
                     <div
-                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                        <div
-                            class="w-24 h-24 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 mb-5 overflow-hidden flex items-center justify-center border-4 border-slate-50 dark:border-slate-700">
-                            <span class="material-icons-round text-5xl text-slate-300 dark:text-slate-500">face_6</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-secondary dark:text-white">박코딩</h4>
-                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Tech Lead</p>
-                        <p class="text-slate-500 text-sm">"아이디어를 현실로 만드는 개발 리드"</p>
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">김수한</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
                     </div>
                     <div
-                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                        <div
-                            class="w-24 h-24 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 mb-5 overflow-hidden flex items-center justify-center border-4 border-slate-50 dark:border-slate-700">
-                            <span class="material-icons-round text-5xl text-slate-300 dark:text-slate-500">face_2</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-secondary dark:text-white">최디잔</h4>
-                        <p class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Design Lead</p>
-                        <p class="text-slate-500 text-sm">"사용자 경험을 디자인하는 크리에이터"</p>
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">최우수진</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
+                    </div>
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">이효준</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
+                    </div>
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl text-center border border-slate-100 dark:border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-secondary dark:text-white">이주형</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-wider mt-2">22기</p>
                     </div>
                 </div>
             </div>
@@ -247,44 +232,52 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">History</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white">작년 활동 하이라이트</h3>
+                    <h3 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white">작년 활동 미리보기</h3>
                 </div>
-                <a class="hidden md:inline-flex items-center text-primary font-semibold hover:text-orange-600 mt-4 md:mt-0"
-                    href="#">
+                <a class="inline-flex items-center text-primary font-semibold hover:text-orange-600"
+                    href="activities.html">
                     전체 활동 보기 <span class="material-icons-round ml-1">arrow_forward</span>
                 </a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div class="group relative overflow-hidden rounded-2xl h-64 md:h-80 shadow-lg cursor-pointer">
                     <img alt="Networking Event"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLrkZgx8eY_CHskTBSBketTbHt_szmTmVsWLyX-e7FQkESUQImk_qf3BI5vhXobML1B7p0UVlN5LZrOxkWLX_gSXcfcoX0K86mrcjzlYREF1MU-VwM5DZ458jXDnIkk0xhLRcictsdggkApBJavrCLucROvs56HPMunPIINKmJQzjW77ZtbSWQJjNZwKE5pVgLwyNAxbC9UDqjAuFbgewnEcsdLJWbjT0pT4a0MjlBZhCexSJmzGEan3VQgALxOP0goQeyZ-IgdZ0l" />
+                        src="assets/images/activity_deeplearning.png" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <span
-                            class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-3 inline-block">Networking</span>
-                        <h4 class="text-2xl font-bold text-white mb-2">2023 연합 네트워킹 데이</h4>
+                            class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-3 inline-block">Project</span>
+                        <h4 class="text-2xl font-bold text-white mb-2">딥러닝 모델 제작</h4>
                         <p
                             class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                            수도권 5개 대학 IT 동아리가 모여 지식을 공유한 밤
+                            2명씩 팀을 짜 나만의 딥러닝 모델을 제작하는 프로젝트
                         </p>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-2xl h-64 md:h-80 shadow-lg cursor-pointer">
                     <img alt="Hackathon"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNWRo5l0gbT9i8TLHClA89I9qjIdGEQ9QfPMVfI1t6JkNbEuYacNKV4j25160a9bfmIo7XV2TAA2XISqxVo6vTPON1wiRCGRIC4-jrdq68r8gPljSUdhqHIKVEnTw5TyDWvriWZzp4sfz9LyuvHTuGTHJon8NImR2-iSDqK6Ed8EoyQ-V9mPTgrGC1VqnGT9b9xkyjwfGb1er9AOhn7XCXcY0OMQXcGFdRVO3F1l-QDtXXg8HHqB8FXr1ZKL8GNNTegsdBPjcEBbEB" />
+                        src="assets/images/activity_n8n.png" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <span
                             class="px-3 py-1 bg-secondary text-white text-xs font-bold rounded-full mb-3 inline-block">Hackathon</span>
-                        <h4 class="text-2xl font-bold text-white mb-2">제 3회 Na'THON 무박 2일</h4>
+                        <h4 class="text-2xl font-bold text-white mb-2">해커톤 With n8n</h4>
                         <p
                             class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                            '대학생활의 불편함 해결'을 주제로 한 아이디어톤
+                            n8n을 활용해 팀별로 다양한 프로그램을 만드는 프로젝트
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="text-center">
+                <a href="plan.html"
+                    class="inline-flex justify-center items-center w-full md:w-auto px-8 py-4 bg-white dark:bg-surface-dark border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold text-lg rounded-xl shadow-lg transition-all duration-300 group">
+                    <span class="mr-2">📅</span> 활동 내용 보러가기
+                    <span
+                        class="material-icons-round ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
             </div>
         </div>
     </section>
@@ -293,31 +286,31 @@
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-8">
-                <span class="text-primary">Na'PLACE</span> 22기 모집
+                <span class="text-primary">Na'PLACE</span> 2026 과동발표회
             </h2>
             <div
                 class="bg-surface-light dark:bg-surface-dark rounded-2xl p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-700">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 text-left">
                     <div class="flex flex-col">
-                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">모집 기간</span>
-                        <span class="text-lg font-bold text-secondary dark:text-white">2024.03.01 ~ 03.15</span>
+                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">행사 일정</span>
+                        <span class="text-lg font-bold text-secondary dark:text-white">추후 공개</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">모집 대상</span>
-                        <span class="text-lg font-bold text-secondary dark:text-white">IT에 관심있는 재학생 누구나</span>
+                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">행사 장소</span>
+                        <span class="text-lg font-bold text-secondary dark:text-white">추후 공개</span>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">지원 방법</span>
-                        <span class="text-lg font-bold text-secondary dark:text-white">구글 폼 온라인 접수</span>
+                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">프로그램</span>
+                        <span class="text-lg font-bold text-secondary dark:text-white">발표 및 체험 부스</span>
                     </div>
                 </div>
                 <div class="space-y-4">
-                    <button
-                        class="w-full bg-primary hover:bg-orange-600 text-white font-bold text-xl py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1">
-                        22기 지원서 작성하기
-                    </button>
+                    <a href="https://learning-playground-portal.vercel.app/#apps"
+                        class="block w-full text-center bg-primary hover:bg-orange-600 text-white font-bold text-xl py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1">
+                        자세히 알아보기
+                    </a>
                     <p class="text-sm text-slate-500 dark:text-slate-400 mt-4">
-                        * 문의사항은 하단 연락처 또는 인스타그램 DM을 이용해주세요.
+                        * 세부 일정과 프로그램은 확정되는 대로 안내합니다.
                     </p>
                 </div>
             </div>
@@ -328,13 +321,11 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center gap-3 mb-4">
-                        <img alt="Na'PLACE Footer Logo" class="h-8 w-auto opacity-90"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcejtnFGLKNgmY_6CfHAW4fQZAzF-vCdkecNu1JE8EyfbtGZUnyyN5Ms2sM9ocTzruDjLZLnz6MPJdCjkdRqiLNjvuizdnKfrAaseY_ZLyc4Syc1fqLm68wnham2VwnSoWoe1V-d_gOaKI6peAQQcmymZMACVUC86083CAUeLDqa9-pJtP-88OnrHKVlWsRR70amzS_vdSdGyvtREmhQYH9DJr-u1r3FialslGjeYQiTY_OuE5jRef0PgF9pPz14CAR5FsS1wUZMBh" />
+                        <img alt="Na'PLACE Footer Logo" class="h-8 w-auto opacity-90" src="assets/images/logo.png" />
                         <span class="font-bold text-xl text-white">Na'<span class="text-primary">PLACE</span></span>
                     </div>
                     <p class="text-sm max-w-xs text-slate-400">
-                        IT 정보 공유 동아리 Na'PLACE<br />
-                        함께 성장하는 즐거움, 당신의 플레이스입니다.
+                        응용수학 동아리 Na'PLACE<br />
                     </p>
                 </div>
                 <div class="flex flex-col md:flex-row gap-8">
@@ -342,40 +333,44 @@
                         <h4 class="text-white font-semibold mb-4">Contact</h4>
                         <ul class="space-y-2 text-sm">
                             <li class="flex items-center gap-2">
-                                <span class="material-icons-round text-primary text-base">email</span>
-                                contact@naplace.univ
+                                </span>
+                                naplace1234@gmail.com
                             </li>
                             <li class="flex items-center gap-2">
-                                <span class="material-icons-round text-primary text-base">phone</span>
-                                010-1234-5678 (회장)
+                                </span>
+                                @na.place_official
                             </li>
                         </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Social</h4>
-                        <div class="flex gap-4">
-                            <a class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white"
-                                href="#">
-                                <span class="text-xs">IG</span>
-                            </a>
-                            <a class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white"
-                                href="#">
-                                <span class="text-xs">YT</span>
-                            </a>
-                            <a class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors text-white"
-                                href="#">
-                                <span class="text-xs">BL</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="border-t border-slate-700 mt-12 pt-8 text-center md:text-left text-xs text-slate-500">
-                <p>© 2024 Na'PLACE. All rights reserved.</p>
+                <p>© 2026 Na'PLACE. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    <!-- Member Modal -->
+    <div id="member-modal"
+        class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+        <div
+            class="bg-surface-light dark:bg-surface-dark w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100">
+            <div class="p-8 text-center relative">
+                <button onclick="closeMemberModal()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+                    <span class="material-icons-round text-2xl">close</span>
+                </button>
+                <div
+                    class="w-48 h-64 mx-auto mb-6 rounded-xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-700 bg-gray-100 dark:bg-gray-800 relative">
+                    <img id="modal-image" src="" alt="Member Photo" class="w-full h-full object-cover">
+                </div>
+                <h3 id="modal-name" class="text-3xl font-bold text-secondary dark:text-white mb-2"></h3>
+                <span id="modal-role"
+                    class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full mb-6"></span>
+                <p id="modal-description" class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
